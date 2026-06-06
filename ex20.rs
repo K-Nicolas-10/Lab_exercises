@@ -41,7 +41,7 @@ async fn sequence_task(mut s1: ExtiInput<'static>, mut s2: ExtiInput<'static>) {
                     break;
                 }
             }
-            let p3 = select(s1.wait_for_rising_edge(), s2.wait_for_falling_edge()).await;
+            let p3 = select(s1.wait_for_rising_edge(), s2.wait_for_rising_edge()).await;
 
             match p3 {
                 embassy_futures::select::Either::First(_) => {}
@@ -61,6 +61,7 @@ async fn sequence_task(mut s1: ExtiInput<'static>, mut s2: ExtiInput<'static>) {
                 }
             }
             SEQUENCE.send(State::Correct).await;
+            break;
         }
         s1.wait_for_high().await;
         s2.wait_for_high().await;
@@ -77,6 +78,7 @@ async fn state_task(mut red: Output<'static>, mut green: Output<'static>) {
             State::Correct => {
                 green.set_high();
                 red.set_low();
+                embassy_time::Timer::after_millis(500).await;
             }
             State::Lock => {
                 red.set_high();
