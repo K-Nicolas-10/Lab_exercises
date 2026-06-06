@@ -18,12 +18,13 @@ static TIME: Signal<CriticalSectionRawMutex, u64> = Signal::new();
 async fn time_task(mut s1: ExtiInput<'static>) {
     let mut time_arr = [0_u64; 3];
     let mut t1 = embassy_time::Instant::now();
-    let mut count: usize = 1;
-    let mut first_time = false;
+    let mut count: usize = 0;
+    let mut first_time = true;
     loop {
         s1.wait_for_falling_edge().await;
         if first_time {
             t1 = embassy_time::Instant::now();
+            first_time = false;
             continue;
         }
         let t2 = embassy_time::Instant::now();
