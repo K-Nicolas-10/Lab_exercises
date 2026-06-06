@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Test Subjects Checklist</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg: #f3f4f6;
+            --surface: #ffffff;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+
+        .exercise-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .exercise-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .checkbox-container {
+            display: flex;
+            gap: 2rem;
+            padding-top: 0.5rem;
+            border-top: 1px dashed var(--border);
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .checkbox-wrapper:hover .checkbox-label {
+            color: var(--text-main);
+        }
+
+        input[type="checkbox"] {
+            width: 1.25rem;
+            height: 1.25rem;
+            cursor: pointer;
+            accent-color: var(--primary);
+            border-radius: 4px;
+        }
+
+        .checkbox-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.15s ease;
+        }
+
+        @media (max-width: 600px) {
+            .checkbox-container {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lab Test Subjects</h1>
+            <p class="subtitle">Interactive Progress Checklist</p>
+        </header>
+
+        <div class="category-section">
+            <h2>GPIO</h2>
+
+            <div class="exercise-card">
+                <div class="exercise-title">1. Binary Counter</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_1_seq">
+                        <input type="checkbox" id="ex_1_seq" name="ex_1_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_1_async">
+                        <input type="checkbox" id="ex_1_async" name="ex_1_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">2. The Combination Lock</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_2_seq">
+                        <input type="checkbox" id="ex_2_seq" name="ex_2_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_2_async">
+                        <input type="checkbox" id="ex_2_async" name="ex_2_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">3. Long Press vs. Short Press Evaluator</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_3_seq">
+                        <input type="checkbox" id="ex_3_seq" name="ex_3_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_3_async">
+                        <input type="checkbox" id="ex_3_async" name="ex_3_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">4. Software PWM (Breathing LED)</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_4_seq">
+                        <input type="checkbox" id="ex_4_seq" name="ex_4_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_4_async">
+                        <input type="checkbox" id="ex_4_async" name="ex_4_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">5. Simon Says Memory Game</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_5_seq">
+                        <input type="checkbox" id="ex_5_seq" name="ex_5_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_5_async">
+                        <input type="checkbox" id="ex_5_async" name="ex_5_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">6. Tap Tempo Blinker</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_6_seq">
+                        <input type="checkbox" id="ex_6_seq" name="ex_6_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_6_async">
+                        <input type="checkbox" id="ex_6_async" name="ex_6_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">7. Inactivity Auto-Sleep</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_7_seq">
+                        <input type="checkbox" id="ex_7_seq" name="ex_7_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_7_async">
+                        <input type="checkbox" id="ex_7_async" name="ex_7_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">8. The "Hold to Charge" Progress Bar</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_8_seq">
+                        <input type="checkbox" id="ex_8_seq" name="ex_8_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_8_async">
+                        <input type="checkbox" id="ex_8_async" name="ex_8_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">9. Strict Timed Passcode</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_9_seq">
+                        <input type="checkbox" id="ex_9_seq" name="ex_9_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_9_async">
+                        <input type="checkbox" id="ex_9_async" name="ex_9_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">10. Logic Gate Simulator</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_10_seq">
+                        <input type="checkbox" id="ex_10_seq" name="ex_10_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_10_async">
+                        <input type="checkbox" id="ex_10_async" name="ex_10_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">11. The Manual Shift Register</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_11_seq">
+                        <input type="checkbox" id="ex_11_seq" name="ex_11_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_11_async">
+                        <input type="checkbox" id="ex_11_async" name="ex_11_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">12. Hardware Demultiplexer</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_12_seq">
+                        <input type="checkbox" id="ex_12_seq" name="ex_12_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_12_async">
+                        <input type="checkbox" id="ex_12_async" name="ex_12_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">13. Any-Edge Interrupter</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_13_seq">
+                        <input type="checkbox" id="ex_13_seq" name="ex_13_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_13_async">
+                        <input type="checkbox" id="ex_13_async" name="ex_13_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">14. Gray Code Cycler</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_14_seq">
+                        <input type="checkbox" id="ex_14_seq" name="ex_14_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_14_async">
+                        <input type="checkbox" id="ex_14_async" name="ex_14_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">15. The Contextual "Shift" Key (GPIO)</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_15_seq">
+                        <input type="checkbox" id="ex_15_seq" name="ex_15_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_15_async">
+                        <input type="checkbox" id="ex_15_async" name="ex_15_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">16. The Manual Traffic Light (State Machine)</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_16_seq">
+                        <input type="checkbox" id="ex_16_seq" name="ex_16_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_16_async">
+                        <input type="checkbox" id="ex_16_async" name="ex_16_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">17. The Directional Shift (Ping-Pong)</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_17_seq">
+                        <input type="checkbox" id="ex_17_seq" name="ex_17_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_17_async">
+                        <input type="checkbox" id="ex_17_async" name="ex_17_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">18. The Contextual Mode Switcher</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_18_seq">
+                        <input type="checkbox" id="ex_18_seq" name="ex_18_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_18_async">
+                        <input type="checkbox" id="ex_18_async" name="ex_18_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">19. The Hardware Comparator</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_19_seq">
+                        <input type="checkbox" id="ex_19_seq" name="ex_19_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_19_async">
+                        <input type="checkbox" id="ex_19_async" name="ex_19_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">20. The "Press-and-Release" Sequence Validator</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_20_seq">
+                        <input type="checkbox" id="ex_20_seq" name="ex_20_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_20_async">
+                        <input type="checkbox" id="ex_20_async" name="ex_20_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>        </div>
+
+        <div class="category-section">
+            <h2>PWM & ADC</h2>
+
+            <div class="exercise-card">
+                <div class="exercise-title">21. Digital Voltmeter</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_21_seq">
+                        <input type="checkbox" id="ex_21_seq" name="ex_21_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_21_async">
+                        <input type="checkbox" id="ex_21_async" name="ex_21_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">22. Light Threshold Alarm</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_22_seq">
+                        <input type="checkbox" id="ex_22_seq" name="ex_22_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_22_async">
+                        <input type="checkbox" id="ex_22_async" name="ex_22_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">23. Software Low-Pass Filter</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_23_seq">
+                        <input type="checkbox" id="ex_23_seq" name="ex_23_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_23_async">
+                        <input type="checkbox" id="ex_23_async" name="ex_23_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">24. RGB Color Mixer</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_24_seq">
+                        <input type="checkbox" id="ex_24_seq" name="ex_24_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_24_async">
+                        <input type="checkbox" id="ex_24_async" name="ex_24_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">25. Smooth Breathing LED</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_25_seq">
+                        <input type="checkbox" id="ex_25_seq" name="ex_25_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_25_async">
+                        <input type="checkbox" id="ex_25_async" name="ex_25_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">26. The "Smart" Nightlight</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_26_seq">
+                        <input type="checkbox" id="ex_26_seq" name="ex_26_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_26_async">
+                        <input type="checkbox" id="ex_26_async" name="ex_26_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">27. The LED Strip "Dial" Mapping</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_27_seq">
+                        <input type="checkbox" id="ex_27_seq" name="ex_27_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_27_async">
+                        <input type="checkbox" id="ex_27_async" name="ex_27_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">28. Potentiometer Color-Temperature Dial</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_28_seq">
+                        <input type="checkbox" id="ex_28_seq" name="ex_28_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_28_async">
+                        <input type="checkbox" id="ex_28_async" name="ex_28_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">29. Auto-Calibrating Sensor</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_29_seq">
+                        <input type="checkbox" id="ex_29_seq" name="ex_29_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_29_async">
+                        <input type="checkbox" id="ex_29_async" name="ex_29_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">30. The Hysteresis Nightlight</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_30_seq">
+                        <input type="checkbox" id="ex_30_seq" name="ex_30_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_30_async">
+                        <input type="checkbox" id="ex_30_async" name="ex_30_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">31. Breathing LED with Adjustable Speed</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_31_seq">
+                        <input type="checkbox" id="ex_31_seq" name="ex_31_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_31_async">
+                        <input type="checkbox" id="ex_31_async" name="ex_31_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">32. The Full-Spectrum Color Wheel</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_32_seq">
+                        <input type="checkbox" id="ex_32_seq" name="ex_32_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_32_async">
+                        <input type="checkbox" id="ex_32_async" name="ex_32_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">33. The Visual Metronome</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_33_seq">
+                        <input type="checkbox" id="ex_33_seq" name="ex_33_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_33_async">
+                        <input type="checkbox" id="ex_33_async" name="ex_33_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">34. The Dashboard Dimmer (ADC+PWM+GPIO)</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_34_seq">
+                        <input type="checkbox" id="ex_34_seq" name="ex_34_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_34_async">
+                        <input type="checkbox" id="ex_34_async" name="ex_34_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">35. The Single-Button RGB Color Mixer</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_35_seq">
+                        <input type="checkbox" id="ex_35_seq" name="ex_35_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_35_async">
+                        <input type="checkbox" id="ex_35_async" name="ex_35_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>        </div>
+
+        <div class="category-section">
+            <h2>SPI & I2C</h2>
+
+            <div class="exercise-card">
+                <div class="exercise-title">36. The "Shake" Detector</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_36_seq">
+                        <input type="checkbox" id="ex_36_seq" name="ex_36_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_36_async">
+                        <input type="checkbox" id="ex_36_async" name="ex_36_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">37. SPI Register Dump (Diagnostics Tool)</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_37_seq">
+                        <input type="checkbox" id="ex_37_seq" name="ex_37_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_37_async">
+                        <input type="checkbox" id="ex_37_async" name="ex_37_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">38. The 24-bit Burst Read Barometer</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_38_seq">
+                        <input type="checkbox" id="ex_38_seq" name="ex_38_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_38_async">
+                        <input type="checkbox" id="ex_38_async" name="ex_38_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">39. The Weather Station Dashboard</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_39_seq">
+                        <input type="checkbox" id="ex_39_seq" name="ex_39_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_39_async">
+                        <input type="checkbox" id="ex_39_async" name="ex_39_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">40. The Digital Bubble Level</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_40_seq">
+                        <input type="checkbox" id="ex_40_seq" name="ex_40_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_40_async">
+                        <input type="checkbox" id="ex_40_async" name="ex_40_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">41. SPI/I2C Protocol Bridge</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_41_seq">
+                        <input type="checkbox" id="ex_41_seq" name="ex_41_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_41_async">
+                        <input type="checkbox" id="ex_41_async" name="ex_41_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">42. The Digital Thermostat</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_42_seq">
+                        <input type="checkbox" id="ex_42_seq" name="ex_42_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_42_async">
+                        <input type="checkbox" id="ex_42_async" name="ex_42_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">43. SPI Screen Thermometer Bar</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_43_seq">
+                        <input type="checkbox" id="ex_43_seq" name="ex_43_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_43_async">
+                        <input type="checkbox" id="ex_43_async" name="ex_43_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">44. The Manual I2C Address Sweeper</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_44_seq">
+                        <input type="checkbox" id="ex_44_seq" name="ex_44_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_44_async">
+                        <input type="checkbox" id="ex_44_async" name="ex_44_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">45. The LED Step Tracker</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_45_seq">
+                        <input type="checkbox" id="ex_45_seq" name="ex_45_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_45_async">
+                        <input type="checkbox" id="ex_45_async" name="ex_45_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">46. Barometric Altitude Alarm</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_46_seq">
+                        <input type="checkbox" id="ex_46_seq" name="ex_46_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_46_async">
+                        <input type="checkbox" id="ex_46_async" name="ex_46_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">47. The Physical Combination Lock</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_47_seq">
+                        <input type="checkbox" id="ex_47_seq" name="ex_47_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_47_async">
+                        <input type="checkbox" id="ex_47_async" name="ex_47_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">48. The 1-Byte Min/Max Tracker</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_48_seq">
+                        <input type="checkbox" id="ex_48_seq" name="ex_48_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_48_async">
+                        <input type="checkbox" id="ex_48_async" name="ex_48_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">49. Pressure-Based Screen Theme</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_49_seq">
+                        <input type="checkbox" id="ex_49_seq" name="ex_49_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_49_async">
+                        <input type="checkbox" id="ex_49_async" name="ex_49_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">50. The "Stillness" Monitor</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_50_seq">
+                        <input type="checkbox" id="ex_50_seq" name="ex_50_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_50_async">
+                        <input type="checkbox" id="ex_50_async" name="ex_50_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">51. The "Comfort Zone" Indicator</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_51_seq">
+                        <input type="checkbox" id="ex_51_seq" name="ex_51_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_51_async">
+                        <input type="checkbox" id="ex_51_async" name="ex_51_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">52. Tilt-Activated Thermometer</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_52_seq">
+                        <input type="checkbox" id="ex_52_seq" name="ex_52_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_52_async">
+                        <input type="checkbox" id="ex_52_async" name="ex_52_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">53. The EEPROM Boot Counter Display</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_53_seq">
+                        <input type="checkbox" id="ex_53_seq" name="ex_53_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_53_async">
+                        <input type="checkbox" id="ex_53_async" name="ex_53_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">54. Digital Stopwatch</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_54_seq">
+                        <input type="checkbox" id="ex_54_seq" name="ex_54_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_54_async">
+                        <input type="checkbox" id="ex_54_async" name="ex_54_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>
+            <div class="exercise-card">
+                <div class="exercise-title">55. Temperature Trend Indicator</div>
+                <div class="checkbox-container">
+                    <label class="checkbox-wrapper" for="ex_55_seq">
+                        <input type="checkbox" id="ex_55_seq" name="ex_55_seq">
+                        <span class="checkbox-label">Sequential</span>
+                    </label>
+                    <label class="checkbox-wrapper" for="ex_55_async">
+                        <input type="checkbox" id="ex_55_async" name="ex_55_async">
+                        <span class="checkbox-label">Async</span>
+                    </label>
+                </div>
+            </div>        </div>
+
+    </div>
+    
+    <script>
+        // Optional: Save progress to local storage so you don't lose ticks if you refresh!
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            // Load saved state
+            checkboxes.forEach(box => {
+                const saved = localStorage.getItem(box.id);
+                if (saved === 'true') box.checked = true;
+                
+                // Save state on change
+                box.addEventListener('change', (e) => {
+                    localStorage.setItem(e.target.id, e.target.checked);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
