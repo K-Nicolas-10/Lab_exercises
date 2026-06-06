@@ -114,6 +114,7 @@ async fn game_task(
             }
             if game_over {
                 game_over = false;
+                play_game_over(&mut yellow, &mut blue, &mut red, &mut green).await;
                 break;
             }
         }
